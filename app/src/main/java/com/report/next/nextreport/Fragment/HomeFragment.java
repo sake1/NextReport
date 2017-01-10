@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.report.next.nextreport.Activity.HomeActivity;
 import com.report.next.nextreport.R;
@@ -21,8 +22,9 @@ import butterknife.OnClick;
  */
 public class HomeFragment extends Fragment {
 
-    @BindView(R.id.fh_output_username) EditText username;
-    @BindView(R.id.fh_output_department) EditText department;
+    @BindView(R.id.fh_output_username)
+    TextView username;
+    @BindView(R.id.fh_output_department) TextView department;
 
     private HomeActivity main;
 
