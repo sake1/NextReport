@@ -17,10 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.report.next.nextreport.Fragment.HomeFragment;
+import com.report.next.nextreport.Fragment.ReportUploadFragment;
 import com.report.next.nextreport.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Main_menu.jpg
@@ -34,6 +36,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
+
+    @OnClick(R.id.ah_trigger_bottom_bar)
+    public void goToUploadOnClickListener_becauseTheFunctionIsSame() {
+        upload();
+    }
+
+    @OnClick(R.id.ah_trigger_bottom_button)
+    public void upload() {
+        this.changeFragment(new ReportUploadFragment(), true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public void changeFragment(Fragment newFragment, boolean isFragmentAddedToBackStack) {
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.fragment_container, newFragment);
+        mFragmentTransaction.replace(R.id.ah_fragment_container, newFragment);
         if(isFragmentAddedToBackStack) {
             mFragmentTransaction.addToBackStack(null);
         }
