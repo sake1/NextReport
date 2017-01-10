@@ -19,14 +19,19 @@ import android.view.MenuItem;
 import com.report.next.nextreport.Fragment.HomeFragment;
 import com.report.next.nextreport.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Main_menu.jpg
  */
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    private NavigationView navigationView = null;
-    private Toolbar toolbar = null;
+    @BindView(R.id.ah_nav_view) NavigationView navigationView;
+    @BindView(R.id.ah_drawer_layout) DrawerLayout drawer;
+    @BindView(R.id.ah_toolbar) Toolbar toolbar;
+
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
 
@@ -34,20 +39,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        ButterKnife.bind(this);
         changeFragment(new HomeFragment(), false);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 HomeActivity.this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(HomeActivity.this);
     }
