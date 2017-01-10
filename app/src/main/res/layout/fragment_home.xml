@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/fh_image_profile"
         android:layout_centerHorizontal="true"
-        android:text="Uvuvwevwevwe Onyetenyevwe Ugwemuhwem Osas"
+        android:text="John Doe"
         android:textColor="@color/White"
         android:textSize="22sp"
         android:textAlignment="center" />
