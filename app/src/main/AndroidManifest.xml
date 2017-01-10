@@ -15,6 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ReportDetailActivity" />
+        <activity android:name=".ReportUploadActivity" />
+        <activity android:name=".ReportPerformanceActivity" />
+        <activity android:name=".ReportRankingActivity"></activity>
     </application>
 
 </manifest>
