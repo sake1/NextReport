@@ -2,13 +2,24 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item android:id="@+id/menu_1" android:icon="@mipmap/ic_launcher"
-            android:title="Menu 1" android:checked="true"/>
-        <item android:id="@+id/menu_2" android:icon="@mipmap/ic_launcher"
-            android:title="Menu 2" android:checked="false"/>
-        <item android:id="@+id/menu_3" android:icon="@mipmap/ic_launcher"
-            android:title="Menu 3" android:checked="false"/>
-        <item android:id="@+id/menu_4" android:icon="@mipmap/ic_launcher"
-            android:title="Menu 4" android:checked="false"/>
+        <item android:id="@+id/menu_1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Menu 1"
+            android:checked="true"/>
+
+        <item android:id="@+id/menu_2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Menu 2"
+            android:checked="false"/>
+
+        <item android:id="@+id/menu_3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Menu 3"
+            android:checked="false"/>
+
+        <item android:id="@+id/menu_4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Menu 4"
+            android:checked="false"/>
     </group>
 </menu>

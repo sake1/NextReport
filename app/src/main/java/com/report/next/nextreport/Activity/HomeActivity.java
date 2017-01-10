@@ -1,5 +1,8 @@
 package com.report.next.nextreport.Activity;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -32,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        changeFragment(new HomeFragment()/* Initialize Fragment for MainActivity here*/);
+        changeFragment(new HomeFragment(), false);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,11 +52,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(HomeActivity.this);
     }
 
-    public void changeFragment(Fragment newFragment) {
+    public void changeFragment(Fragment newFragment, boolean isFragmentAddedToBackStack) {
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.fragment_container, newFragment);
-        mFragmentTransaction.addToBackStack(null);
+        if(isFragmentAddedToBackStack) {
+            mFragmentTransaction.addToBackStack(null);
+        }
         mFragmentTransaction.commit();
     }
 

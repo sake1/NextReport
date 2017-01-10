@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_register"
+    android:id="@+id/activity_forget_password"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BacgroundGrey"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.report.next.nextreport.Activity.RegisterActivity">
+    android:paddingTop="125dp"
+    tools:context="com.report.next.nextreport.Activity.LoginActivity">
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Report"
+        android:textColor="@color/White"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:drawablePadding="15dp"
+        android:drawableStart="@drawable/ic_mail_outline_white_18dp"
+        android:hint="Email"
+        android:paddingStart="8dp"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:inputType="textEmailAddress"
+        android:id="@+id/ar_input_email"
+        android:textAlignment="viewStart" />
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="15dp"
+        android:drawableStart="@drawable/ic_lock_white_18dp"
+        android:hint="Password"
+        android:paddingStart="8dp"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:id="@+id/ar_input_password"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="15dp"
+        android:drawableStart="@drawable/ic_lock_white_18dp"
+        android:hint="Confirm Password"
+        android:paddingStart="8dp"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:id="@+id/ar_input_password_confirm"/>
+
+    <Button
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#2C2A35"
+        android:padding="16dp"
+        android:text="Register"
+        android:textColor="@color/White"
+        android:textSize="15sp"
+        android:id="@+id/ar_trigger_register"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Back to login"
+        android:textColor="@color/White"
+        android:textSize="13sp"
+        android:id="@+id/ar_trigger_login"/>
+
+</LinearLayout>
+
