@@ -1,7 +1,9 @@
-package com.report.next.nextreport;
+package com.report.next.nextreport.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.report.next.nextreport.R;
 
 /**
  * Main_menu.jpg

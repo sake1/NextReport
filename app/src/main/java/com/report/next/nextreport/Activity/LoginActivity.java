@@ -1,17 +1,19 @@
-package com.report.next.nextreport;
+package com.report.next.nextreport.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.report.next.nextreport.R;
+
 /**
- * static_performance.jpg
+ * Login.jpg
  */
 
-public class ReportPerformanceActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report_performance);
+        setContentView(R.layout.activity_login);
     }
 }
