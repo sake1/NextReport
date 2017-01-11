@@ -101,6 +101,8 @@ public class ReportPerformanceFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_performance, container, false);
         ButterKnife.bind(this, thisFragmentView);
         main = (HomeActivity) getActivity();
+        main.setBottomBarVisibility(View.VISIBLE);
+
         ProfileSetter setProfile = new ProfileSetter(main, thisFragmentView);
         setView();
 

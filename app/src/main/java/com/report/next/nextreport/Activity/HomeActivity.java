@@ -15,6 +15,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.report.next.nextreport.Fragment.HomeFragment;
 import com.report.next.nextreport.Fragment.ReportUploadFragment;
@@ -33,6 +36,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.ah_nav_view) NavigationView navigationView;
     @BindView(R.id.ah_drawer_layout) DrawerLayout drawer;
     @BindView(R.id.ah_toolbar) Toolbar toolbar;
+    @BindView(R.id.ah_trigger_bottom_bar) RelativeLayout bottomBar;
+    @BindView(R.id.ah_trigger_bottom_button) TextView bottomButton;
 
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
@@ -71,6 +76,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             mFragmentTransaction.addToBackStack(null);
         }
         mFragmentTransaction.commit();
+    }
+
+    public void setBottomBarVisibility(int visibility) {
+        bottomBar.setVisibility(visibility);
+        bottomButton.setVisibility(visibility);
     }
 
     @Override

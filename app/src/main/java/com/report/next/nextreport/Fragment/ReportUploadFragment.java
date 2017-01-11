@@ -63,11 +63,7 @@ public class ReportUploadFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_upload, container, false);
         main = (HomeActivity) getActivity();
         ButterKnife.bind(this, thisFragmentView);
-
-        RelativeLayout bottomBar = (RelativeLayout) main.findViewById(R.id.ah_trigger_bottom_bar);
-        TextView bottomButton = (TextView) main.findViewById(R.id.ah_trigger_bottom_button);
-        bottomBar.setVisibility(View.GONE);
-        bottomButton.setVisibility(View.GONE);
+        main.setBottomBarVisibility(View.GONE);
 
         return thisFragmentView;
     }

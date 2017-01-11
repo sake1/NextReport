@@ -32,6 +32,7 @@ public class ReportRankingFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_ranking, container, false);
         ButterKnife.bind(this, thisFragmentView);
         main = (HomeActivity) getActivity();
+        main.setBottomBarVisibility(View.VISIBLE);
         ProfileSetter setProfile = new ProfileSetter(main, thisFragmentView);
 
         return thisFragmentView;

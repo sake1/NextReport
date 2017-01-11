@@ -49,6 +49,7 @@ public class ReportDetailFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_detail, container, false);
         main = (HomeActivity) getActivity();
         ButterKnife.bind(this, thisFragmentView);
+        main.setBottomBarVisibility(View.VISIBLE);
 
         return thisFragmentView;
     }
