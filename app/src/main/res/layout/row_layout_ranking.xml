@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:background="@color/Red"
+                android:id="@+id/layout_report_date">
+
+                <ImageView
+                    android:id="@+id/ic_throphy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_trophy" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/ic_throphy"
+                    android:layout_alignBottom="@+id/ic_throphy"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rank" />
+
+                    <TextView
+                        android:id="@+id/show_rank_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/layout_report_date"
+                android:text="John Cena"
+                android:id="@id/show_username_label"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sales in Jakarta"
+                android:id="@+id/department_label"
+                android:layout_toEndOf="@id/layout_report_date"
+                android:layout_below="@id/show_username_label"
+                android:paddingStart="10dp"
+                android:textSize="12sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_toEndOf="@id/layout_report_date"
+                android:layout_below="@id/department_label"
+                android:layout_alignBottom="@id/layout_report_date"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Points: "
+                    android:textSize="15sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@id/show_points_label"
+                    android:text="25"
+                    android:layout_marginEnd="35dp"
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clients: "
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@id/show_clients_label"
+                    android:text="30"
+                    android:textSize="22sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

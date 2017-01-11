@@ -148,15 +148,13 @@
         android:layout_below="@id/rank_label"
         android:layout_marginStart="20dp"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/background"
-        android:layout_marginBottom="50dp">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rank_list"/>
-    </ScrollView>
+            android:id="@+id/rank_list"
+            android:layout_below="@+id/background"
+            android:layout_marginBottom="50dp"/>
+
+
 
 </RelativeLayout>

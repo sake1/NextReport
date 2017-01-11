@@ -1,13 +1,175 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tab_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context="com.report.next.nextreport.Fragment.ReportDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/moontain"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:id="@+id/background"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_account_circle_black_24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/profile_pic"/>
+
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/profile_pic"
+        android:text="John Doe"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:id="@+id/show_username_label"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sales Marketing, Jakarta"
+        android:id="@+id/department_label"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/show_username_label"
+        android:layout_toEndOf="@+id/profile_pic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points"
+        android:layout_below="@+id/department_label"
+        android:layout_toEndOf="@+id/profile_pic"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:id="@+id/points_label"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:layout_below="@+id/points_label"
+        android:layout_toEndOf="@+id/profile_pic"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:layout_marginStart="5dp"
+        android:id="@+id/show_points_label"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/top_line"
+        android:layout_alignTop="@+id/points_label"
+        android:layout_marginTop="15dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/down_line"
+        android:layout_alignBottom="@+id/show_points_label"
+        android:layout_marginBottom="15dp"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/down_line"
+        android:layout_alignTop="@id/top_line"
+        android:layout_toEndOf="@+id/points_label"
+        android:background="@color/White"
+        android:layout_marginStart="25dp"
+        android:id="@+id/first_line"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clients"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/first_line"
+        android:layout_below="@id/department_label"
+        android:id="@+id/clients_label"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="36sp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/show_clients_label"
+        android:layout_below="@id/clients_label"
+        android:text="25"
+        android:layout_toEndOf="@id/first_line"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/down_line"
+        android:layout_alignTop="@id/top_line"
+        android:layout_toEndOf="@+id/clients_label"
+        android:background="@color/White"
+        android:layout_marginStart="25dp"
+        android:id="@+id/second_line"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank"
+        android:id="@+id/rank_label"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_toEndOf="@id/second_line"
+        android:layout_below="@id/department_label"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/show_rank_label"
+        android:textColor="@color/White"
+        android:textSize="36sp"
+        android:layout_toEndOf="@+id/second_line"
+        android:layout_below="@id/rank_label"
+        android:layout_marginStart="20dp"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/Black"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/Black"
+        app:tabTextColor="@color/Black"
+        android:layout_below="@+id/show_rank_label"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/tabs">
 
-</FrameLayout>
+    </android.support.v4.view.ViewPager>
+
+
+</RelativeLayout>

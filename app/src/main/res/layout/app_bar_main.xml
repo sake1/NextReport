@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:fitsSystemWindows="true"
-    tools:context=".Activity.HomeActivity">
+    tools:context=".Activity.HomeActivity"
+    >
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/ah_toolbar"
@@ -47,7 +48,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:id="@+id/ah_trigger_bottom_button"
-        android:textColor="@color/White"/>
+        android:textColor="@color/White"
+        />
 
 
 </RelativeLayout>
