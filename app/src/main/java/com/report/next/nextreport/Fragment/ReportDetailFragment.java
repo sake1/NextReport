@@ -70,10 +70,10 @@ public class ReportDetailFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new ReportRankingFragment();
-                case 1 : return new ReportRankingFragment();
-                case 2 : return new ReportRankingFragment();
-                case 3 : return new ReportRankingFragment();
+                case 0 : return new AllReportFragment();
+                case 1 : return new ProcessReportFragment();
+                case 2 : return new ApprovedReportFragment();
+                case 3 : return new RejectedReportFragment();
             }
             return null;
         }

@@ -2,24 +2,42 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item android:id="@+id/menu_1"
+        <item
+            android:id="@+id/menu_dashboard"
+            android:checked="true"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 1"
-            android:checked="true"/>
+            android:title="Dashboard" />
 
-        <item android:id="@+id/menu_2"
+        <item
+            android:id="@+id/menu_report_detail"
+            android:checked="false"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 2"
-            android:checked="false"/>
+            android:title="Report Detail" />
 
-        <item android:id="@+id/menu_3"
+        <item
+            android:id="@+id/menu_ranking"
+            android:checked="false"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 3"
-            android:checked="false"/>
+            android:title="Ranking" />
 
-        <item android:id="@+id/menu_4"
+        <item
+            android:id="@+id/menu_performance"
+            android:checked="false"
             android:icon="@mipmap/ic_launcher"
-            android:title="Menu 4"
-            android:checked="false"/>
+            android:title="Performance" />
+
+        <item
+            android:id="@+id/menu_edit_profile"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Edit Profile" />
+
+        <item
+            android:id="@+id/menu_logout"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Logout" />
+
+
     </group>
 </menu>

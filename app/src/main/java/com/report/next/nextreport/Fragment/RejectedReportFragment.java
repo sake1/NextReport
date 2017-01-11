@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.report.next.nextreport.R;
 import com.report.next.nextreport.Report;
@@ -17,10 +18,10 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AllReportFragment extends Fragment {
+public class RejectedReportFragment extends Fragment {
 
 
-    public AllReportFragment() {
+    public RejectedReportFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +30,7 @@ public class AllReportFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_report, container, false);
+        return inflater.inflate(R.layout.fragment_show_rejected_report, container, false);
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class AllReportFragment extends Fragment {
 
     public void populateData() {
         ArrayList<Report> arrayOfReports = new ArrayList<>();
+        ArrayList<Report> arrayOfProcessReports = new ArrayList<>();
 
         arrayOfReports.add(new Report("10", "Jan", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Rejected"));
         arrayOfReports.add(new Report("20", "Mar", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Approved"));
@@ -47,8 +49,16 @@ public class AllReportFragment extends Fragment {
         arrayOfReports.add(new Report("20", "Feb", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Approved"));
         arrayOfReports.add(new Report("14", "Nov", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Proses"));
 
-        ListView listView = (ListView) getActivity().findViewById(R.id.report_list);
-        ReportAdapter adapter = new ReportAdapter(getActivity(), arrayOfReports);
+
+        for(int a = 0 ; a < arrayOfReports.size(); a++){
+            if(arrayOfReports.get(a).getStatus().equalsIgnoreCase("Rejected")){
+                arrayOfProcessReports.add(arrayOfReports.get(a));
+            }
+        }
+
+
+        ListView listView = (ListView) getActivity().findViewById(R.id.srr_report_list);
+        ReportAdapter adapter = new ReportAdapter(getActivity(), arrayOfProcessReports);
         listView.setAdapter(adapter);
 
     }

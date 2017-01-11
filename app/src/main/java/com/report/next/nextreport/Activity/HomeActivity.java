@@ -20,6 +20,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.report.next.nextreport.Fragment.HomeFragment;
+import com.report.next.nextreport.Fragment.ReportDetailFragment;
+import com.report.next.nextreport.Fragment.ReportPerformanceFragment;
+import com.report.next.nextreport.Fragment.ReportRankingFragment;
 import com.report.next.nextreport.Fragment.ReportUploadFragment;
 import com.report.next.nextreport.R;
 
@@ -120,9 +123,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.menu_1) {
-            // do something
+        if (id == R.id.menu_dashboard) {
+            changeFragment(new HomeFragment(), false);
         }
+        else if(id == R.id.menu_performance){
+            changeFragment(new ReportPerformanceFragment(), true);
+        }
+        else if(id == R.id.menu_ranking){
+            changeFragment(new ReportRankingFragment(), true);
+        }
+        else if(id == R.id.menu_report_detail){
+            changeFragment(new ReportDetailFragment(), true);
+        }
+
+        navigationView.setCheckedItem(id);
+
 
         drawer.closeDrawer(GravityCompat.START);
         return true;

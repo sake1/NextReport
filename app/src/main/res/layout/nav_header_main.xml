@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/ForestGreen"
+
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nhm_profile_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="24dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:id="@+id/nhm_username"
+        android:layout_above="@+id/nhm_department"
+        android:layout_alignStart="@+id/nhm_profile_image"
+        android:layout_below="@id/nhm_profile_image"
+        android:text="Ari Wibowo"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nhm_department"
+        android:gravity="start"
+        android:layout_marginBottom="15dp"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/nhm_username"
+        android:text="Sales"
+
+        />
+
+</RelativeLayout>

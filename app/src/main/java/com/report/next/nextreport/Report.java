@@ -57,7 +57,7 @@ public class Report {
 
     private String month;
 
-    public Report(String date, String description, String title, String status, String month) {
+    public Report(String date, String month,  String title,String description, String status) {
         this.date = date;
         this.description = description;
         this.title = title;

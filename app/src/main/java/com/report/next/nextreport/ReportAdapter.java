@@ -1,6 +1,7 @@
 package com.report.next.nextreport;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,22 @@ public class ReportAdapter extends ArrayAdapter<Report>{
         TextView tvDescription = (TextView) convertView.findViewById(R.id.show_description_label);
         TextView tvStatus= (TextView) convertView.findViewById(R.id.show_status_label);
 
-        if(report.getStatus().equalsIgnoreCase(""))
+        if(report.getStatus().equalsIgnoreCase("Proses")){
+            tvStatus.setBackgroundColor(Color.parseColor("#FFFF00"));
+        }
+        else if(report.getStatus().equalsIgnoreCase("Approved")){
+            tvStatus.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        else if(report.getStatus().equalsIgnoreCase("Rejected")){
+            tvStatus.setBackgroundColor(Color.parseColor("#b90f1a"));
+            tvStatus.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+
+        tvStatus.setText(report.getStatus());
+        tvMonth.setText(report.getMonth());
+        tvDate.setText(report.getDate());
+        tvTitle.setText(report.getTitle());
+        tvDescription.setText(report.getDescription());
 
         return convertView;
     }

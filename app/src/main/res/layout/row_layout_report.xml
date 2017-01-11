@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Report Description"
                 android:textSize="12sp"
-                android:layout_below="@+id/show_username_label"
+                android:layout_below="@+id/show_title_label"
                 android:layout_toEndOf="@id/layout_report_date"
                 android:paddingStart="10dp"
                 android:paddingTop="5dp"
