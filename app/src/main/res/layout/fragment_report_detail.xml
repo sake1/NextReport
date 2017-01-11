@@ -4,10 +4,26 @@
     android:layout_height="match_parent"
     tools:context="com.report.next.nextreport.Fragment.ReportDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--[MOTI]-->
+    <!--ka, nanti ini apus aja-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Approved Dialog"
+            android:id="@+id/frd_trigger_approved"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show In Process Dialog"
+            android:id="@+id/frd_trigger_process"/>
+
+    </LinearLayout>
 
 </FrameLayout>
