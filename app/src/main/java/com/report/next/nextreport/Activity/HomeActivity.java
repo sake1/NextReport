@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -122,6 +123,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Log.d("id", String.valueOf(id));
 
         if (id == R.id.menu_dashboard) {
             changeFragment(new HomeFragment(), false);
@@ -136,10 +138,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             changeFragment(new ReportDetailFragment(), true);
         }
 
-        navigationView.setCheckedItem(id);
-
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setChecked(int id){
+        navigationView.setCheckedItem(id);
     }
 }

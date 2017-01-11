@@ -8,9 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.report.next.nextreport.Activity.HomeActivity;
 import com.report.next.nextreport.R;
-import com.report.next.nextreport.Ranking;
-import com.report.next.nextreport.RankingAdapter;
+import com.report.next.nextreport.Class.Ranking;
+import com.report.next.nextreport.Class.RankingAdapter;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class ReportRankingFragment extends Fragment {
 
-    private int rank = 0;
+
 
     public ReportRankingFragment() {
         // Required empty public constructor
@@ -29,18 +30,23 @@ public class ReportRankingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        HomeActivity main = (HomeActivity) getActivity();
+        main.setChecked(R.id.menu_ranking);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_report_ranking, container, false);
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        HomeActivity main = (HomeActivity) getActivity();
+
+        main.setBottomBarVisibility(View.VISIBLE);
         populateData();
     }
 
     public void populateData(){
         ArrayList<Ranking> arrayOfRankings = new ArrayList<>();
-
+        int rank = 0;
 
         arrayOfRankings.add(new Ranking(++rank, "Eka", "Sales", "Jakarta", 25, 30));
         arrayOfRankings.add(new Ranking(++rank, "Bejo", "Engineer", "New Delhi", 23, 27));

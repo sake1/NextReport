@@ -65,6 +65,8 @@ public class ReportUploadFragment extends Fragment {
         ButterKnife.bind(this, thisFragmentView);
         main.setBottomBarVisibility(View.GONE);
 
+        main.setChecked(R.id.menu_report_detail);
+
         return thisFragmentView;
     }
 

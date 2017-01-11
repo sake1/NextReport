@@ -95,6 +95,7 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this, thisFragmentView);
         main.setBottomBarVisibility(View.VISIBLE);
         init();
+        main.setChecked(R.id.menu_dashboard);
 
         return thisFragmentView;
     }

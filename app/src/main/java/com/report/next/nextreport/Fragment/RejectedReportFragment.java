@@ -7,11 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.report.next.nextreport.R;
-import com.report.next.nextreport.Report;
-import com.report.next.nextreport.ReportAdapter;
+import com.report.next.nextreport.Class.Report;
+import com.report.next.nextreport.Class.ReportAdapter;
 
 import java.util.ArrayList;
 

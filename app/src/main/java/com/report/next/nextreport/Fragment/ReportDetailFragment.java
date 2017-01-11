@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.report.next.nextreport.Activity.HomeActivity;
 import com.report.next.nextreport.R;
 
 /**
@@ -51,6 +52,11 @@ public class ReportDetailFragment extends Fragment {
                 tabLayout.setupWithViewPager(viewPager);
             }
         });
+
+        HomeActivity main = (HomeActivity) getActivity();
+
+        main.setChecked(R.id.menu_report_detail);
+
 
         return x;
 

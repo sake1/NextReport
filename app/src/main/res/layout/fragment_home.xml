@@ -74,7 +74,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_assignment_black_48dp" />
+                android:src="@drawable/icon_document" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_format_list_numbered_black_48dp" />
+                android:src="@drawable/icon_ranking" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_file_upload_black_48dp" />
+                android:src="@drawable/icon_plus_circle" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,7 +162,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_timeline_black_48dp" />
+                android:src="@drawable/icon_graph" />
 
             <TextView
                 android:layout_width="wrap_content"

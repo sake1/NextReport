@@ -106,6 +106,10 @@ public class ReportPerformanceFragment extends Fragment {
         ProfileSetter setProfile = new ProfileSetter(main, thisFragmentView);
         setView();
 
+        HomeActivity main = (HomeActivity) getActivity();
+
+        main.setChecked(R.id.menu_performance);
+
         return thisFragmentView;
     }
 
