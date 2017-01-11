@@ -93,6 +93,7 @@ public class HomeFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_home, container, false);
         main = (HomeActivity) getActivity();
         ButterKnife.bind(this, thisFragmentView);
+        main.setBottomBarVisibility(View.VISIBLE);
         init();
 
         return thisFragmentView;

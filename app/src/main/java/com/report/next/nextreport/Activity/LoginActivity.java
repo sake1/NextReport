@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.al_trigger_login)
     public void login() {
-        if(email.getText().toString().equals("admin") && password.getText().toString().equals("pass")) {
+        if(email.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
         } else {

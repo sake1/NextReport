@@ -1,0 +1,143 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/moontain"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:id="@+id/hup_static_background_pic"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_account_circle_black_24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/hup_output_profile_pic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/hup_output_profile_pic"
+        android:text="John Doe"
+        android:textColor="@color/White"
+        android:textSize="28sp"
+        android:id="@+id/hup_output_username" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sales Marketing, Jakarta"
+        android:id="@+id/hup_output_department"
+        android:textColor="@color/White"
+        android:layout_below="@+id/hup_output_username"
+        android:layout_toEndOf="@+id/hup_output_profile_pic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points"
+        android:layout_below="@+id/hup_output_department"
+        android:layout_toEndOf="@+id/hup_output_profile_pic"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:id="@+id/hup_static_points_label" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/hup_top_line"
+        android:layout_alignTop="@+id/hup_static_points_label"
+        android:layout_marginTop="15dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/hup_down_line"
+        android:layout_alignBottom="@+id/hup_output_points"
+        android:layout_marginBottom="15dp"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hup_down_line"
+        android:layout_alignTop="@id/hup_top_line"
+        android:layout_toEndOf="@+id/hup_static_points_label"
+        android:background="@color/White"
+        android:layout_marginStart="25dp"
+        android:id="@+id/hup_first_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clients"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@id/hup_first_line"
+        android:layout_below="@id/hup_output_department"
+        android:id="@+id/hup_static_clients_label" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hup_down_line"
+        android:layout_alignTop="@id/hup_top_line"
+        android:layout_toEndOf="@+id/hup_static_clients_label"
+        android:background="@color/White"
+        android:layout_marginStart="25dp"
+        android:id="@+id/hup_second_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank"
+        android:id="@+id/hup_static_rank_label"
+        android:textColor="@color/White"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_toEndOf="@id/hup_second_line"
+        android:layout_below="@id/hup_output_department"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/White"
+        android:textSize="36sp"
+        android:id="@+id/hup_output_points"
+        android:textAlignment="viewStart"
+        android:layout_below="@+id/hup_static_points_label"
+        android:layout_toStartOf="@+id/hup_first_line"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="36sp"
+        android:id="@+id/hup_output_clients_amount"
+        android:text="0"
+        android:layout_below="@+id/hup_static_clients_label"
+        android:layout_toEndOf="@+id/hup_output_username" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/hup_output_rank"
+        android:textColor="@color/White"
+        android:textSize="36sp"
+        android:layout_below="@+id/hup_static_rank_label"
+        android:layout_alignEnd="@+id/hup_static_rank_label" />
+
+</RelativeLayout>

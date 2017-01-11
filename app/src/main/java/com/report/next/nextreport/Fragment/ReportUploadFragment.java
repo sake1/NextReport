@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.report.next.nextreport.Activity.HomeActivity;
@@ -61,6 +63,7 @@ public class ReportUploadFragment extends Fragment {
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_upload, container, false);
         main = (HomeActivity) getActivity();
         ButterKnife.bind(this, thisFragmentView);
+        main.setBottomBarVisibility(View.GONE);
 
         return thisFragmentView;
     }
