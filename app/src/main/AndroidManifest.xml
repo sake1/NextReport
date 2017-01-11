@@ -11,14 +11,14 @@
         android:name=".Class.NextReview">
 
         <activity android:name=".Activity.HomeActivity" android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".Activity.LoginActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.RegisterActivity"/>
-        <activity android:name=".Activity.ForgetPasswordActivity" />
+        <activity android:name=".Activity.RegisterActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activity.ForgetPasswordActivity" android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
