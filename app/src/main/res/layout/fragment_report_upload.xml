@@ -1,17 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.report.next.nextreport.Fragment.ReportUploadFragment">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:orientation="vertical">
 
-        <ScrollView
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="100dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,12 +156,18 @@
                     android:background="#F10C2D"
                     android:textColor="@color/White"
                     android:layout_marginTop="15dp"
-                    android:id="@+id/fru_trigger_upload"/>
+                    android:id="@+id/fru_trigger_upload"
+                    android:minHeight="25dp"
+                    android:minWidth="175dp"/>
 
             </LinearLayout>
 
-        </ScrollView>
+        </android.support.v7.widget.CardView>
 
-    </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
 
-</FrameLayout>
+    </LinearLayout>
+
+</ScrollView>
