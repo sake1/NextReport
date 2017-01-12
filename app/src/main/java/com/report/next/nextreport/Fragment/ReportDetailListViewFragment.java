@@ -38,7 +38,7 @@ public class ReportDetailListViewFragment extends Fragment {
 
     class ReportAdapter extends ArrayAdapter<Report> {
 
-        public ReportAdapter(Context context, ArrayList<Report> reports) {
+        ReportAdapter(Context context, ArrayList<Report> reports) {
             super(context, 0, reports);
         }
 
@@ -58,12 +58,14 @@ public class ReportDetailListViewFragment extends Fragment {
             TextView tvStatus = (TextView) convertView.findViewById(R.id.rlr_output_status);
 
             if (report.getStatus().equals(ReportStatus.PROCESSED)) {
-                tvStatus.setBackgroundColor(Color.parseColor("#FFFF00"));
+                tvStatus.setBackgroundColor(getResources().getColor(R.color.Yellow));
+                tvStatus.setTextColor(getResources().getColor(R.color.Black));
             } else if (report.getStatus().equals(ReportStatus.APPROVED)) {
-                tvStatus.setBackgroundColor(Color.parseColor("#228B22"));
+                tvStatus.setBackgroundColor(getResources().getColor(R.color.LightGreen));
+                tvStatus.setTextColor(getResources().getColor(R.color.Black));
             } else if (report.getStatus().equals(ReportStatus.REJECTED)) {
-                tvStatus.setBackgroundColor(Color.parseColor("#b90f1a"));
-                tvStatus.setTextColor(Color.parseColor("#FFFFFF"));
+                tvStatus.setBackgroundColor(getResources().getColor(R.color.CustomRed));
+                tvStatus.setTextColor(getResources().getColor(R.color.White));
             }
 
             tvStatus.setText(report.getStatus().status());

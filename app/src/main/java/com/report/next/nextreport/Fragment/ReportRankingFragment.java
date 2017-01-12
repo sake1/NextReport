@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.report.next.nextreport.Activity.HomeActivity;
@@ -33,12 +35,7 @@ public class ReportRankingFragment extends Fragment {
 
     class RankingAdapter extends ArrayAdapter<Ranking> {
 
-        /**
-         * TODO
-         * Find out whether possble to use Butterknife here
-         */
-
-        public RankingAdapter(Context context, ArrayList<Ranking> rankings) {
+        RankingAdapter(Context context, ArrayList<Ranking> rankings) {
             super(context, 0, rankings);
         }
 
@@ -71,22 +68,29 @@ public class ReportRankingFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private void init() {
+        main = (HomeActivity) getActivity();
+
+        main.setBottomBarVisibility(View.VISIBLE);
+        main.setChecked(R.id.menu_ranking);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View thisFragmentView = inflater.inflate(R.layout.fragment_report_ranking, container, false);
-        main = (HomeActivity) getActivity();
         ButterKnife.bind(this, thisFragmentView);
-        main.setBottomBarVisibility(View.VISIBLE);
-
-        main.setChecked(R.id.menu_ranking);
-        populateData();
+        init();
+        setView();
 
         return thisFragmentView;
     }
 
-    public void populateData(){
+    public void setView() {
+        /**
+         * Currently only using dummy data
+         */
         ArrayList<Ranking> arrayOfRankings = new ArrayList<>();
         int rank = 0;
 

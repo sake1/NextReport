@@ -27,7 +27,10 @@ public class ReportPendingDialog extends Dialog {
 
     @OnClick(R.id.drdp_trigger_edit)
     public void edit() {
-
+        /**
+         * This is just a function for the mockup version
+         * Will be deleted after database is introduced.
+         */
     }
 
     @OnClick(R.id.drdp_trigger_ok)

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -25,6 +26,7 @@ import butterknife.OnClick;
 
 public class ReportRespondedDialog extends Dialog {
 
+    private static final String TAG = "ReportResponded";
     @BindView(R.id.drda_output_title) TextView title;
     @BindView(R.id.drda_output_date) TextView date;
     @BindView(R.id.drda_output_report_detail) TextView reportDetail;
@@ -43,11 +45,15 @@ public class ReportRespondedDialog extends Dialog {
     }
 
     private void init() {
-        WindowManager.LayoutParams param = new WindowManager.LayoutParams();
-        param.copyFrom(getWindow().getAttributes());
-        param.width = WindowManager.LayoutParams.MATCH_PARENT;
-        param.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        getWindow().setAttributes(param);
+        try {
+            WindowManager.LayoutParams param = new WindowManager.LayoutParams();
+            param.copyFrom(getWindow().getAttributes());
+            param.width = WindowManager.LayoutParams.MATCH_PARENT;
+            param.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            getWindow().setAttributes(param);
+        } catch (Exception e) {
+            Log.e(TAG, "Error when trying to resize the dialog", e);
+        }
     }
 
     private void setView() {
@@ -56,7 +62,8 @@ public class ReportRespondedDialog extends Dialog {
         reportDetail.setText(reportData.getDescription());
         if(reportData.getStatus().equals(ReportStatus.REJECTED)) {
             status.setText(ReportStatus.REJECTED.status());
-            status.setBackgroundColor(Color.parseColor("#b90f1a"));
+            status.setBackgroundColor(getContext().getResources().getColor(R.color.CustomRed));
+            status.setTextColor(getContext().getResources().getColor(R.color.White));
         }
     }
 

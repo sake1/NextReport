@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-20dp"
-        android:src="@drawable/moontain" />
+        android:src="@drawable/moontain"
+        android:contentDescription="image"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:background="@color/Yellow"
+                android:textColor="@color/Black"
                 android:text="Process"
                 android:minHeight="2dp"
                 android:layout_marginLeft="10dp"/>

@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:background="@color/LawnGreen"
+                android:textColor="@color/Black"
                 android:text="Approved"
                 android:minHeight="2dp"
                 android:layout_marginLeft="10dp"
