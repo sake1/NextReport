@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.report.next.nextreport.Activity.HomeActivity;
 import com.report.next.nextreport.Class.Report;
+import com.report.next.nextreport.Class.ReportStatus;
 import com.report.next.nextreport.R;
 
 import java.util.ArrayList;
@@ -66,23 +67,23 @@ public class ReportDetailFragment extends Fragment {
                 inflatedFragment.setReports(reports);
                 return inflatedFragment;
             } else if(position == STATUS_PROCESS) {
-                inflatedFragment.setReports(getFilteredReports("Process"));
+                inflatedFragment.setReports(getFilteredReports(ReportStatus.PROCESSED));
                 return inflatedFragment;
             } else if(position == STATUS_ACCEPTED) {
-                inflatedFragment.setReports(getFilteredReports("Approved"));
+                inflatedFragment.setReports(getFilteredReports(ReportStatus.APPROVED));
                 return inflatedFragment;
             } else if(position == STATUS_REJECTED) {
-                inflatedFragment.setReports(getFilteredReports("Rejected"));
+                inflatedFragment.setReports(getFilteredReports(ReportStatus.REJECTED));
                 return inflatedFragment;
             }
             return null;
         }
 
-        private ArrayList<Report> getFilteredReports(String status) {
+        private ArrayList<Report> getFilteredReports(ReportStatus status) {
             ArrayList<Report> arrayOfFilteredReports = new ArrayList<>();
 
             for(Report report : reports) {
-                if(report.getStatus().equalsIgnoreCase(status)){
+                if(report.getStatus().equals(status)){
                     arrayOfFilteredReports.add(report);
                 }
             }
@@ -138,18 +139,15 @@ public class ReportDetailFragment extends Fragment {
          * This is currenty filled with dummy data, will be changed later
          * Coded the data here so when later on we use query,
          * we dont have to query the data 4 times (wasteful)
-         *
-         * TODO
-         * Create enum class for these diffrent status to avid hard code
          */
         ArrayList<Report> arrayOfReports = new ArrayList<>();
 
-        arrayOfReports.add(new Report("10", "Jan", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Rejected"));
-        arrayOfReports.add(new Report("20", "Mar", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Approved"));
-        arrayOfReports.add(new Report("10", "Des", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Process"));
-        arrayOfReports.add(new Report("21", "Ags", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Approved"));
-        arrayOfReports.add(new Report("20", "Feb", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Approved"));
-        arrayOfReports.add(new Report("14", "Nov", "Belajar Android", "01-11 16:02:04.843 19358-19358/com.report.next.nextreport D/AbsListView: Get MotionRecognitionManager",   "Process"));
+        arrayOfReports.add(new Report("20", "Jan", "Androud Tutorial", "Android App Development for Beginners - 1 - Introduction",               ReportStatus.REJECTED));
+        arrayOfReports.add(new Report("22", "Jan", "Androud Tutorial", "Android App Development for Beginners - 2 - Installing Android Studio",  ReportStatus.APPROVED));
+        arrayOfReports.add(new Report("24", "Jan", "Androud Tutorial", "Android App Development for Beginners - 3 - Setting up Your Project",    ReportStatus.PROCESSED));
+        arrayOfReports.add(new Report("26", "Jan", "Androud Tutorial", "Android App Development for Beginners - 4 - Running a Simple App",       ReportStatus.APPROVED));
+        arrayOfReports.add(new Report("28", "Jan", "Androud Tutorial", "Android App Development for Beginners - 5 - Tour of the Interface",      ReportStatus.APPROVED));
+        arrayOfReports.add(new Report("01", "Feb", "Androud Tutorial", "Android App Development for Beginners - 6 - Android Studio Tips",        ReportStatus.PROCESSED));
 
         return arrayOfReports;
     }

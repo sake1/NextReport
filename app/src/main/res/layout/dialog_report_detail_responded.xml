@@ -50,7 +50,8 @@
                 android:background="@color/LawnGreen"
                 android:text="Approved"
                 android:minHeight="2dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:id="@+id/drda_output_status"/>
 
         </LinearLayout>
 

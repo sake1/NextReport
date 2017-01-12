@@ -6,15 +6,18 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.report.next.nextreport.Activity.HomeActivity;
+import com.report.next.nextreport.Class.ReportPendingDialog;
+import com.report.next.nextreport.Class.ReportRespondedDialog;
+import com.report.next.nextreport.Class.ReportStatus;
 import com.report.next.nextreport.R;
 import com.report.next.nextreport.Class.Report;
 
@@ -54,16 +57,16 @@ public class ReportDetailListViewFragment extends Fragment {
             TextView tvDescription = (TextView) convertView.findViewById(R.id.rlr_output_description);
             TextView tvStatus = (TextView) convertView.findViewById(R.id.rlr_output_status);
 
-            if (report.getStatus().equalsIgnoreCase("Proses")) {
+            if (report.getStatus().equals(ReportStatus.PROCESSED)) {
                 tvStatus.setBackgroundColor(Color.parseColor("#FFFF00"));
-            } else if (report.getStatus().equalsIgnoreCase("Approved")) {
+            } else if (report.getStatus().equals(ReportStatus.APPROVED)) {
                 tvStatus.setBackgroundColor(Color.parseColor("#228B22"));
-            } else if (report.getStatus().equalsIgnoreCase("Rejected")) {
+            } else if (report.getStatus().equals(ReportStatus.REJECTED)) {
                 tvStatus.setBackgroundColor(Color.parseColor("#b90f1a"));
                 tvStatus.setTextColor(Color.parseColor("#FFFFFF"));
             }
 
-            tvStatus.setText(report.getStatus());
+            tvStatus.setText(report.getStatus().status());
             tvMonth.setText(report.getMonth());
             tvDate.setText(report.getDate());
             tvTitle.setText(report.getTitle());
@@ -107,5 +110,19 @@ public class ReportDetailListViewFragment extends Fragment {
         }
         ReportAdapter adapter = new ReportAdapter(main, reports);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //PS. int i appeat to stand for the position of the clicked item
+                TextView status = (TextView) view.findViewById(R.id.rlr_output_status);
+                if(status.getText().toString().equals("Process")) {
+                    ReportPendingDialog dialog = new ReportPendingDialog(main, reports.get(i));
+                    dialog.show();
+                } else {
+                    ReportRespondedDialog dialog = new ReportRespondedDialog(main, reports.get(i));
+                    dialog.show();
+                }
+            }
+        });
     }
 }

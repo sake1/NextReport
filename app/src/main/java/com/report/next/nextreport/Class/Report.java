@@ -11,11 +11,11 @@ public class Report {
      */
     private String title;
     private String description;
-    private String status;
+    private ReportStatus status;
     private String date;
     private String month;
 
-    public Report(String date, String month,  String title,String description, String status) {
+    public Report(String date, String month,  String title, String description, ReportStatus status) {
         this.date = date;
         this.description = description;
         this.title = title;
@@ -47,11 +47,11 @@ public class Report {
         this.description = description;
     }
 
-    public String getStatus() {
+    public ReportStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ReportStatus status) {
         this.status = status;
     }
 

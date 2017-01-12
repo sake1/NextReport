@@ -17,11 +17,13 @@ import butterknife.OnClick;
  * Created by USER on 11/01/2017.
  */
 
-public class ReportInProcessDialog extends Dialog {
+public class ReportPendingDialog extends Dialog {
 
     @BindView(R.id.drdp_output_title) TextView title;
     @BindView(R.id.drdp_output_date) TextView date;
     @BindView(R.id.drdp_output_report_detail) TextView reportDetail;
+
+    private Report reportData;
 
     @OnClick(R.id.drdp_trigger_edit)
     public void edit() {
@@ -33,8 +35,9 @@ public class ReportInProcessDialog extends Dialog {
         dismiss();
     }
 
-    public ReportInProcessDialog(Context context) {
+    public ReportPendingDialog(Context context, Report report) {
         super(context);
+        reportData = report;
     }
 
     private void init() {
@@ -46,16 +49,16 @@ public class ReportInProcessDialog extends Dialog {
     }
 
     private void setView() {
-        title.setText("Report Title");
-        date.setText("Report Date");
-        reportDetail.setText("In the mid-1990s Japan had a smaller proportion of over-65s than Britain or Germany. Thanks to an ultra-low birth rate, admirable longevity and a stingy immigration policy, it is now by far the oldest country in the OECD. And senescence is spreading to new areas. Many rural Japanese villages have been old for years, because young people have left them for cities. Now the suburbs are greying, too.");
+        title.setText(reportData.getTitle());
+        date.setText(reportData.getDate() + " " + reportData.getMonth());
+        reportDetail.setText(reportData.getDescription());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.dialog_report_detail_process);
+        setContentView(R.layout.dialog_report_detail_pendings);
         ButterKnife.bind(this);
         init();
         setView();
