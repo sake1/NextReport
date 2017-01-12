@@ -1,6 +1,8 @@
-package com.report.next.nextreport.Class;
+package com.report.next.nextreport.Application;
 
 import android.app.Application;
+
+import com.report.next.nextreport.Class.TypefaceUtil;
 
 /**
  * Created by TimotiusEk on 1/11/2017.

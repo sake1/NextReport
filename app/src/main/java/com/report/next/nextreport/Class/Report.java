@@ -6,6 +6,22 @@ package com.report.next.nextreport.Class;
 
 public class Report {
 
+    /**
+     * TODO: ganti datatype jadi date
+     */
+    private String title;
+    private String description;
+    private String status;
+    private String date;
+    private String month;
+
+    public Report(String date, String month,  String title,String description, String status) {
+        this.date = date;
+        this.description = description;
+        this.title = title;
+        this.status = status;
+        this.month = month;
+    }
 
     public String getDate() {
         return date;
@@ -39,29 +55,11 @@ public class Report {
         this.status = status;
     }
 
-    /**
-     * TODO: ganti datatype jadi date
-     */
-    private String title;
-    private String description;
-    private String status;
-    private String date;
-
     public String getMonth() {
         return month;
     }
 
     public void setMonth(String month) {
-        this.month = month;
-    }
-
-    private String month;
-
-    public Report(String date, String month,  String title,String description, String status) {
-        this.date = date;
-        this.description = description;
-        this.title = title;
-        this.status = status;
         this.month = month;
     }
 }

@@ -1,19 +1,25 @@
 package com.report.next.nextreport.Fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.report.next.nextreport.Activity.HomeActivity;
 import com.report.next.nextreport.R;
 import com.report.next.nextreport.Class.Ranking;
-import com.report.next.nextreport.Class.RankingAdapter;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Ranking.jpg
@@ -21,7 +27,45 @@ import java.util.ArrayList;
 
 public class ReportRankingFragment extends Fragment {
 
+    @BindView(R.id.frr_output_listview) ListView listView;
 
+    private HomeActivity main;
+
+    class RankingAdapter extends ArrayAdapter<Ranking> {
+
+        /**
+         * TODO
+         * Find out whether possble to use Butterknife here
+         */
+
+        public RankingAdapter(Context context, ArrayList<Ranking> rankings) {
+            super(context, 0, rankings);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            Ranking ranking = getItem(position);
+
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_layout_ranking, parent, false);
+            }
+
+            TextView tvRank = (TextView) convertView.findViewById(R.id.rlr_output_rank);
+            TextView tvUsername = (TextView) convertView.findViewById(R.id.rlr_output_username);
+            TextView tvDepartment = (TextView) convertView.findViewById(R.id.rlr_output_department);
+            TextView tvPoints = (TextView) convertView.findViewById(R.id.rlr_output_points);
+            TextView tvClients = (TextView) convertView.findViewById(R.id.rlr_output_clients);
+
+            tvRank.setText(String.valueOf(ranking.getRank()));
+            tvUsername.setText(ranking.getName());
+            tvDepartment.setText(ranking.getDepartments() + " in " + ranking.getLocation());
+            tvPoints.setText(String.valueOf(ranking.getPoints()));
+            tvClients.setText(String.valueOf(ranking.getClients()));
+
+            return convertView;
+        }
+    }
 
     public ReportRankingFragment() {
         // Required empty public constructor
@@ -30,18 +74,16 @@ public class ReportRankingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        HomeActivity main = (HomeActivity) getActivity();
-        main.setChecked(R.id.menu_ranking);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_ranking, container, false);
-    }
-
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        HomeActivity main = (HomeActivity) getActivity();
-
+        View thisFragmentView = inflater.inflate(R.layout.fragment_report_ranking, container, false);
+        main = (HomeActivity) getActivity();
+        ButterKnife.bind(this, thisFragmentView);
         main.setBottomBarVisibility(View.VISIBLE);
+
+        main.setChecked(R.id.menu_ranking);
         populateData();
+
+        return thisFragmentView;
     }
 
     public void populateData(){
@@ -55,9 +97,7 @@ public class ReportRankingFragment extends Fragment {
         arrayOfRankings.add(new Ranking(++rank, "Paijo", "Doctor", "Kuala Lumpur", 5, 3));
         arrayOfRankings.add(new Ranking(++rank, "Pok Inem", "IT", "Bandung", 2, 1));
 
-        ListView listView = (ListView) getActivity().findViewById(R.id.rank_list);
-        RankingAdapter adapter = new RankingAdapter(getActivity(), arrayOfRankings);
+        RankingAdapter adapter = new RankingAdapter(main, arrayOfRankings);
         listView.setAdapter(adapter);
     }
-
 }

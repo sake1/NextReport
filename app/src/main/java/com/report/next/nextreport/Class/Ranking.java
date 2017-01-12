@@ -5,6 +5,23 @@ package com.report.next.nextreport.Class;
  */
 
 public class Ranking {
+
+    private int rank;
+    private String name;
+    private String departments;
+    private String location;
+    private int points;
+    private int clients;
+
+    public Ranking(int rank, String name, String departments, String location, int points, int clients) {
+        this.rank = rank;
+        this.name = name;
+        this.departments = departments;
+        this.location = location;
+        this.points = points;
+        this.clients = clients;
+    }
+
     public String getLocation() {
         return location;
     }
@@ -51,21 +68,5 @@ public class Ranking {
 
     public void setRank(int rank) {
         this.rank = rank;
-    }
-
-    public int rank;
-    public String name;
-    public String departments;
-    public String location;
-    public int points;
-    public int clients;
-
-    public Ranking(int rank, String name, String departments, String location, int points, int clients) {
-        this.rank = rank;
-        this.name = name;
-        this.departments = departments;
-        this.location = location;
-        this.points = points;
-        this.clients = clients;
     }
 }
