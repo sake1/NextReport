@@ -12,7 +12,7 @@
         android:scaleType="fitXY"
         android:id="@+id/hup_static_background_pic"/>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/ic_account_circle_black_24dp"

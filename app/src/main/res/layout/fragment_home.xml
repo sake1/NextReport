@@ -22,7 +22,7 @@
         android:textColor="@color/White"
         android:textSize="22sp" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/fh_image_profile"
         android:layout_width="60dp"
         android:layout_height="60dp"

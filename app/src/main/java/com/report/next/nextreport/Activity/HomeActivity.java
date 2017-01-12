@@ -123,7 +123,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Log.d("id", String.valueOf(id));
 
         if (id == R.id.menu_dashboard) {
             changeFragment(new HomeFragment(), false);

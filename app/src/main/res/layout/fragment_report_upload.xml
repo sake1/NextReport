@@ -52,7 +52,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Client Full Name"
-                        android:id="@+id/fru_input_fullname"/>
+                        android:id="@+id/fru_input_fullname"
+                        android:inputType="textPersonName|textCapWords"
+                        android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "
+                        android:singleLine="true"
+                        />
 
                 </LinearLayout>
 
@@ -75,7 +79,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Client Valid Email"
-                        android:id="@+id/fru_input_email"/>
+                        android:id="@+id/fru_input_email"
+                        android:inputType="textEmailAddress"
+                        android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@._- "
+                        android:singleLine="true"/>
 
                 </LinearLayout>
 
@@ -93,12 +100,14 @@
                         android:layout_height="wrap_content"
                         android:text="Phone Number"
                         android:textSize="12sp"
-                        android:textColor="@color/Gray"/>
+                        android:textColor="@color/Gray"
+                        />
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Client Phone Number"
-                        android:id="@+id/fru_input_phone_number"/>
+                        android:id="@+id/fru_input_phone_number"
+                        android:inputType="phone"/>
 
                 </LinearLayout>
 
@@ -121,7 +130,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="File Report Title"
-                        android:id="@+id/fru_input_report_title"/>
+                        android:id="@+id/fru_input_report_title"
+                        android:inputType="textCapWords"/>
 
                 </LinearLayout>
 
@@ -144,7 +154,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Report Description"
-                        android:id="@+id/fru_input_description"/>
+                        android:id="@+id/fru_input_description"
+                        android:inputType="textCapSentences"/>
 
                 </LinearLayout>
 

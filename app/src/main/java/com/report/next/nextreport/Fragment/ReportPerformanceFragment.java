@@ -58,12 +58,16 @@ public class ReportPerformanceFragment extends Fragment {
 
         LineDataSet dataSet = new LineDataSet(mockupdata, "First Data");
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
-        dataSet.setColor(Color.GREEN);
+        dataSet.setColor(getResources().getColor(R.color.BlueLineGraph)); //Blue
         dataSet.setDrawCircles(true);
         dataSet.setDrawCircleHole(true);
-        dataSet.setCircleRadius(4.5f);
-        dataSet.setCircleHoleRadius(3.5f);
-        dataSet.setCircleColor(Color.GREEN);
+        dataSet.setCircleRadius(5f);
+        dataSet.setCircleHoleRadius(3f);
+        dataSet.setCircleColor(getResources().getColor(R.color.BlueLineGraph));
+        dataSet.setDrawFilled(true);
+        dataSet.setFillColor(getResources().getColor(R.color.BlueGraphFill));
+        dataSet.setLineWidth(2);
+        dataSet.setFillAlpha(75);
 
         List<Entry> mockupdata2 = new ArrayList<>();
         mockupdata2.add(new Entry(1, 50));
@@ -74,12 +78,16 @@ public class ReportPerformanceFragment extends Fragment {
 
         LineDataSet dataSet2 = new LineDataSet(mockupdata2, "Second Data");
         dataSet2.setAxisDependency(YAxis.AxisDependency.LEFT);
-        dataSet2.setColor(Color.RED);
+        dataSet2.setColor(getResources().getColor(R.color.GreenLineGraph)); //Green
         dataSet2.setDrawCircles(true);
         dataSet2.setDrawCircleHole(true);
-        dataSet2.setCircleRadius(4.5f);
-        dataSet2.setCircleHoleRadius(3.5f);
-        dataSet2.setCircleColor(Color.RED);
+        dataSet2.setCircleRadius(5f);
+        dataSet2.setCircleHoleRadius(3f);
+        dataSet2.setCircleColor(getResources().getColor(R.color.GreenLineGraph));
+        dataSet2.setDrawFilled(true);
+        dataSet2.setFillColor(getResources().getColor(R.color.GreenGraphFill));
+        dataSet2.setFillAlpha(25);
+        dataSet2.setLineWidth(2);
 
         List<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(dataSet);

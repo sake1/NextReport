@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#999999</color>
-    <color name="colorPrimaryDark">#B5B6B6</color>
+    <color name="colorPrimaryDark">#B5B5B5</color>
     <color name="colorAccent">#FF4081</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
@@ -152,4 +152,10 @@
     <color name="CustomGrey">#a0bbbf</color>
     <color name="DarkGrey">#627a7c</color>
     <color name="BacgroundGrey">#403E4B</color>
+
+    <color name="BlueLineGraph">#85A6F5</color>
+    <color name="BlueGraphFill">#D0EAF9</color>
+
+    <color name="GreenLineGraph">#81E09C</color>
+    <color name="GreenGraphFill">#92E1A0</color>
 </resources>

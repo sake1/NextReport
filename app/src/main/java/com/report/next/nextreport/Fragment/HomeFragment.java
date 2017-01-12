@@ -47,9 +47,9 @@ public class HomeFragment extends Fragment {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                card.setBackgroundColor(Color.parseColor("#F10C2D"));
+                card.setBackgroundColor(getResources().getColor(R.color.googleGrey));
             } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                card.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                card.setBackgroundColor(getResources().getColor(R.color.White));
             }
             return false;
         }

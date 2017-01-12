@@ -11,6 +11,6 @@ public class NextReview extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/Raleway-Black.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/Raleway-LightItalic.ttf");
     }
 }
