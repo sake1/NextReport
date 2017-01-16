@@ -126,14 +126,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.menu_dashboard) {
             changeFragment(new HomeFragment(), false);
-        }
-        else if(id == R.id.menu_performance){
+        } else if(id == R.id.menu_performance){
             changeFragment(new ReportPerformanceFragment(), true);
-        }
-        else if(id == R.id.menu_ranking){
+        } else if(id == R.id.menu_ranking){
             changeFragment(new ReportRankingFragment(), true);
-        }
-        else if(id == R.id.menu_report_detail){
+        } else if(id == R.id.menu_report_detail){
             changeFragment(new ReportDetailFragment(), true);
         }
 

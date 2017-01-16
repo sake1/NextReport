@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.report.next.nextreport.Activity.HomeActivity;
@@ -96,6 +97,8 @@ public class HomeFragment extends Fragment {
         main.setBottomBarVisibility(View.VISIBLE);
         init();
         main.setChecked(R.id.menu_dashboard);
+
+        ((ImageView) thisFragmentView.findViewById(R.id.fh_static_image_top)).setScaleType(ImageView.ScaleType.FIT_XY);
 
         return thisFragmentView;
     }
