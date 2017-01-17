@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NextReport.iml" filepath="$PROJECT_DIR$/NextReport.iml" />
       <module fileurl="file://$PROJECT_DIR$/NextReportGit.iml" filepath="$PROJECT_DIR$/NextReportGit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
